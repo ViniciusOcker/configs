@@ -4,14 +4,11 @@ spring:
   cloud:
     gateway:
   routes:
-    - id: subscriptionRoute
-      uri: lb://SUBSCRIPTION-SERVICE
+    - id: animalRoute
+      uri: lb://ANIMAL-SERVICE
       predicates:
-        - Path=/subscription/**
-    - id: courseRoute
-      uri: lb://COURSE-SERVICE
+        - Path=/animal/**
+    - id: specieRoute
+      uri: lb://SPECIE-SERVICE
       predicates:
-        - Path=/course/**
-      filters:
-        - AddRequestHeader=course-request-header, custom-course-request-header
-        - AddResponseHeader=course-response-header, custom-course-response-header
+        - Path=/specie/**
