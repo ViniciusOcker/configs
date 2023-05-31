@@ -3,12 +3,12 @@ server:
 spring:
   cloud:
     gateway:
-  routes:
-    - id: animalRoute
-      uri: lb://ANIMAL-SERVICE
-      predicates:
-        - Path=/animal/**
-    - id: specieRoute
-      uri: lb://SPECIE-SERVICE
-      predicates:
-        - Path=/specie/**
+      routes:
+        - id: animalRoute
+          uri: lb://ANIMAL-SERVICE
+          predicates:
+            - Path=/animal/**
+        - id: specieRoute
+          uri: lb://SPECIE-SERVICE
+          predicates:
+            - Path=/specie/**
